@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (lin64) Build 3247384 Thu Jun 10 19:36:07 MDT 2021
-| Date         : Sat Dec 11 19:09:06 2021
+| Date         : Sat Dec 11 20:30:06 2021
 | Host         : iabilheira running 64-bit Ubuntu 20.04.3 LTS
 | Command      : report_clocks -file clocks.log
 | Design       : main
@@ -21,7 +21,8 @@ Attributes
   I: Inverted
   S: Pin phase-shifted with Latency mode
 
-Clock  Period(ns)  Waveform(ns)  Attributes  Sources
+Clock        Period(ns)  Waveform(ns)    Attributes  Sources
+sys_clk_pin  83.330      {0.000 41.660}  P           {clk}
 
 
 ====================================================

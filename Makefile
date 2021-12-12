@@ -21,7 +21,11 @@ test_pwm: test_pwm.sv pulse_generator.sv pwm.sv not_pwm.sv
 	@echo "This might take a while, we're testing a lot of clock cycles!"
 	${IVERILOG} $^ -o test_pwm.bin && ${VVP} test_pwm.bin ${VVP_POST}
 
-pwm.bit: pwm.sv $(MAIN_SRCS)
+test_main: test_main.sv ${MAIN_SRCS} pulse_generator.sv pwm.sv not_pwm.sv
+	@echo "This might take a while, we're testing a lot of clock cycles!"
+	${IVERILOG} test_main.sv ${MAIN_SRCS} -o test_main.bin && ${VVP} test_main.bin ${VVP_POST}
+
+main.bit: main.sv $(MAIN_SRCS)
 	@echo "########################################"
 	@echo "#### Building FPGA bitstream        ####"
 	@echo "########################################"

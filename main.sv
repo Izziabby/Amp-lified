@@ -2,42 +2,49 @@
   A pulse width modulation module 
 */
 
-module main(clk, rst, ena, step, duty, out);
+module main(clk, rst, ena, step, duty, pwm_out, pwm_not_out, leds, rgb, buttons);
 
 parameter N = 8;
 
-input wire clk, rst;
+input wire clk, rst; 
 input wire ena; // Enables the output.
 input wire step; // Enables the internal counter. You should only increment when this signal is high (this is how we slow down the PWM to reasonable speeds).
 input wire [N-1:0] duty; // The "duty cycle" input.
-output logic out;
+output logic pwm_out, pwm_not_out;
+output logic [1:0] leds;
+output logic [2:0] rgb;
+input wire [1:0] buttons;
 
 logic [N-1:0] counter;
 
-// Create combinational (always_comb) and sequential (always_ff @(posedge clk)) 
-// logic that drives the out signal.
-// out should be off if ena is low.
-// out should be fully zero (no pulses) if duty is 0.
-// out should have its highest duty cycle if duty is 2^N-1;
-// bonus: out should be fully zero at duty = 0, and fully 1 (always on) at duty = 2^N-1;
-// You can use behavioural combinational logic, but try to keep your sequential
-//   and combinational blocks as separate as possible.
-
-// SOLUTION START
-
-always_comb begin
-  out = ena & ( (counter < duty) | &counter );
+// Some example logic to make sure that you've flashed the FPGA. One of the
+// worst problems to debug is when you aren't sure that the FPGA is updating
+// its HDL. If you are worried about that, make a simple change to this block
+// to make sure that the FPGA is updating!
+always_comb begin : io_logic 
+    leds[0] = buttons[0] ^ buttons[1];
+    leds[1] = buttons[0] & buttons[1];
+    
+    rgb[0] = ~( buttons[0] & ~buttons[1]);
+    rgb[1] = ~(~buttons[0] &  buttons[1]);
+    rgb[2] = ~( buttons[0] &  buttons[1]);
 end
 
-always_ff @(posedge clk) begin
-  if(rst) begin
-    counter <=0;
-  end
-  else if (step) begin
-    counter <= counter + 1;
-  end
-end
 
-// SOLUTION END
+logic [$clog2(CLK_TICKS)-1:0] ticks;
+pulse_generator #(.N($clog2(CLK_TICKS))) PULSE_GEN (
+  .clk(clk), .rst(rst), .ena(ena), .ticks(ticks),
+  .out(pwm_step)
+);
+
+logic [PWM_WIDTH-1:0] duty;
+pwm #(.N(PWM_WIDTH)) PWM(
+  .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(duty), .out(pwm_out)
+);
+
+logic [PWM_WIDTH-1:0] duty;
+not_pwm #(.N(PWM_WIDTH)) NOTPWM(
+  .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(duty), .out(pwm_not_out)
+);
 
 endmodule
