@@ -19,8 +19,8 @@ create_clock -add -name sys_clk_pin -period 83.33 -waveform {0 41.66} [get_ports
 
 
 # ILI9341 Display Controller + FT6206 Capacitive Controller (i2c) + SD Card
-set_property -dict { PACKAGE_PIN W2    IOSTANDARD LVCMOS33 } [get_ports { pwm_step }]; #IO_L5N_T0_34 Sch=pio[32]
-set_property -dict { PACKAGE_PIN V2    IOSTANDARD LVCMOS33 } [get_ports { pwm_out }]; #IO_L5P_T0_34 Sch=pio[33]
+#set_property -dict { PACKAGE_PIN W2    IOSTANDARD LVCMOS33 } [get_ports { pwm_out }]; #IO_L5N_T0_34 Sch=pio[32]
+#set_property -dict { PACKAGE_PIN V2    IOSTANDARD LVCMOS33 } [get_ports { pwm_not_out }]; #IO_L5P_T0_34 Sch=pio[33]
 #set_property -dict { PACKAGE_PIN W3    IOSTANDARD LVCMOS33 } [get_ports { interface_mode[0] }]; #IO_L6N_T0_VREF_34 Sch=pio[34]
 #set_property -dict { PACKAGE_PIN V3    IOSTANDARD LVCMOS33 } [get_ports { interface_mode[1] }]; #IO_L6P_T0_34 Sch=pio[35]
 #set_property -dict { PACKAGE_PIN W5    IOSTANDARD LVCMOS33 } [get_ports { interface_mode[2] }]; #IO_L12P_T1_MRCC_34 Sch=pio[36]
@@ -38,8 +38,8 @@ set_property -dict { PACKAGE_PIN V2    IOSTANDARD LVCMOS33 } [get_ports { pwm_ou
 #set_property -dict { PACKAGE_PIN V8    IOSTANDARD LVCMOS33 } [get_ports { spi_clk }]; #IO_L14N_T2_SRCC_34 Sch=pio[48]
 
 ## Pmod Header JA
-set_property -dict { PACKAGE_PIN G17   IOSTANDARD LVCMOS33 } [get_ports { clk] }]; #IO_L5N_T0_D07_14 Sch=ja[1]
-#set_property -dict { PACKAGE_PIN G19   IOSTANDARD LVCMOS33 } [get_ports { pmod[1] }]; #IO_L4N_T0_D05_14 Sch=ja[2]
+set_property -dict { PACKAGE_PIN G17   IOSTANDARD LVCMOS33 } [get_ports { pwm_out }]; #IO_L5N_T0_D07_14 Sch=ja[1]
+set_property -dict { PACKAGE_PIN G19   IOSTANDARD LVCMOS33 } [get_ports { pwm_not_out }]; #IO_L4N_T0_D05_14 Sch=ja[2]
 #set_property -dict { PACKAGE_PIN N18   IOSTANDARD LVCMOS33 } [get_ports { pmod[2] }]; #IO_L9P_T1_DQS_14 Sch=ja[3]
 #set_property -dict { PACKAGE_PIN L18   IOSTANDARD LVCMOS33 } [get_ports { pmod[3] }]; #IO_L8P_T1_D11_14 Sch=ja[4]
 #set_property -dict { PACKAGE_PIN H17   IOSTANDARD LVCMOS33 } [get_ports { pmod[4] }]; #IO_L5P_T0_D06_14 Sch=ja[7]

@@ -4,13 +4,13 @@ module test_pwm;
 
 parameter CLK_HZ = 12_000_000;
 parameter CLK_PERIOD_NS = (1_000_000_000/CLK_HZ); // Approximation.
-parameter PERIOD_US = 10; // Keep it small in the testbench 
+parameter PERIOD_US = 1000; //ms   // Keep it small in the testbench 
 parameter CLK_TICKS = CLK_HZ/1_000_000*PERIOD_US;
 parameter PWM_WIDTH = 4;
 
 logic clk, rst, ena;
 logic [$clog2(CLK_TICKS)-1:0] ticks;
-wire pwm_step, pwm_out;
+wire pwm_step, pwm_out, pwm_not_out;
 
 pulse_generator #(.N($clog2(CLK_TICKS))) PULSE_GEN (
   .clk(clk), .rst(rst), .ena(ena), .ticks(ticks),
@@ -22,12 +22,18 @@ pwm #(.N(PWM_WIDTH)) PWM(
   .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(duty), .out(pwm_out)
 );
 
+logic [PWM_WIDTH-1:0] duty2;
+not_pwm #(.N(PWM_WIDTH)) NOTPWM(
+  .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(duty), .out(pwm_not_out)
+);
+
 always #(CLK_PERIOD_NS/2) clk = ~clk;
 
 initial begin
   $dumpfile("pwm.fst");
   $dumpvars(0, PULSE_GEN);
   $dumpvars(0, PWM);
+  $dumpvars(0, NOTPWM);
 
   rst = 1;
   ena = 1;

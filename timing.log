@@ -1,0 +1,43 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (lin64) Build 3247384 Thu Jun 10 19:36:07 MDT 2021
+| Date         : Sat Dec 11 19:09:05 2021
+| Host         : iabilheira running 64-bit Ubuntu 20.04.3 LTS
+| Command      : report_timing -sort_by group -max_paths 100 -path_type summary -file timing.log -verbose
+| Design       : main
+| Device       : 7a15t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+----------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Startpoint                     Endpoint                       Slack(ns)     
+----------------------------------------------------------------------------
+duty[3]                        out                            inf           
+counter_reg[1]/C               counter_reg[7]/D               inf           
+counter_reg[1]/C               counter_reg[6]/D               inf           
+step                           counter_reg[0]/CE              inf           
+step                           counter_reg[1]/CE              inf           
+step                           counter_reg[2]/CE              inf           
+step                           counter_reg[3]/CE              inf           
+counter_reg[1]/C               counter_reg[4]/D               inf           
+rst                            counter_reg[4]/R               inf           
+rst                            counter_reg[5]/R               inf           
+rst                            counter_reg[6]/R               inf           
+rst                            counter_reg[7]/R               inf           
+rst                            counter_reg[0]/R               inf           
+rst                            counter_reg[1]/R               inf           
+rst                            counter_reg[2]/R               inf           
+rst                            counter_reg[3]/R               inf           
+step                           counter_reg[4]/CE              inf           
+step                           counter_reg[5]/CE              inf           
+step                           counter_reg[6]/CE              inf           
+step                           counter_reg[7]/CE              inf           
+counter_reg[1]/C               counter_reg[1]/D               inf           
+counter_reg[1]/C               counter_reg[5]/D               inf           
+counter_reg[3]/C               counter_reg[3]/D               inf           
+counter_reg[2]/C               counter_reg[2]/D               inf           
+counter_reg[0]/C               counter_reg[0]/D               inf           
+
+
+
