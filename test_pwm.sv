@@ -4,7 +4,7 @@ module test_pwm;
 
 parameter CLK_HZ = 12_000_000;
 parameter CLK_PERIOD_NS = (1_000_000_000/CLK_HZ); // Approximation.
-parameter PERIOD_US = 1000; //ms   // Keep it small in the testbench 
+parameter PERIOD_US = 100; //us   // Keep it small in the testbench 
 parameter CLK_TICKS = CLK_HZ/1_000_000*PERIOD_US;
 parameter PWM_WIDTH = 4;
 

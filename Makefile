@@ -9,7 +9,7 @@ VIVADO=vivado -mode batch -source
 #FT6206_SRCS=i2c_controller.sv ft6206_controller.sv i2c_types.sv ft6206_defines.sv 
 # Add any new source files needed for the final bitstream here
 #MAIN_SRCS=main.sv pulse_generator.sv pwm.sv triangle_generator.sv block_ram.sv ${ILI9341_SRCS} ${FT6206_SRCS}
-MAIN_SRCS=main.sv pulse_generator.sv pwm.sv not_pwm.sv
+MAIN_SRCS=main.sv pulse_generator.sv pwm.sv not_pwm.sv triangle_generator.sv
 
 # Look up .PHONY rules for Makefiles
 .PHONY: clean submission remove_solutions
@@ -20,6 +20,10 @@ test_pulse_generator: tests/test_pulse_generator.sv pulse_generator.sv
 test_pwm: test_pwm.sv pulse_generator.sv pwm.sv not_pwm.sv
 	@echo "This might take a while, we're testing a lot of clock cycles!"
 	${IVERILOG} $^ -o test_pwm.bin && ${VVP} test_pwm.bin ${VVP_POST}
+
+test_tri: test_triangle_generator.sv triangle_generator.sv 
+	@echo "This might take a while, we're testing a lot of clock cycles!"
+	${IVERILOG} $^ -o test_tri.bin && ${VVP} test_tri.bin ${VVP_POST}
 
 test_main: test_main.sv ${MAIN_SRCS} pulse_generator.sv pwm.sv not_pwm.sv
 	@echo "This might take a while, we're testing a lot of clock cycles!"
