@@ -14,7 +14,7 @@ MAIN_SRCS=main.sv pulse_generator.sv pwm.sv not_pwm.sv triangle_generator.sv
 # Look up .PHONY rules for Makefiles
 .PHONY: clean submission remove_solutions
 
-test_pulse_generator: tests/test_pulse_generator.sv pulse_generator.sv
+test_pulse_generator: test_pulse_generator.sv pulse_generator.sv
 	${IVERILOG} $^ -o test_pulse_generator.bin && ${VVP} test_pulse_generator.bin ${VVP_POST}
 
 test_pwm: test_pwm.sv pulse_generator.sv pwm.sv not_pwm.sv
