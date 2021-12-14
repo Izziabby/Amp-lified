@@ -10,7 +10,7 @@ parameter M = $clog2(CLK_TICKS);
 parameter CLK_HZ = 12_000_000;
 parameter CLK_PERIOD_NS = (1_000_000_000/CLK_HZ); // Approximation.
 parameter PERIOD_US = 10; //us   // Keep it small in the testbench 
-parameter CLK_TICKS = CLK_HZ/1_000_000*PERIOD_US;
+parameter CLK_TICKS = CLK_HZ*PERIOD_US/1_000_000;
 
 input wire clk, rst, ena; 
 output logic pwm_out;
@@ -18,8 +18,8 @@ output logic [1:0] leds;
 input wire [1:0] buttons;
 
 logic [N-1:0] duty;
-logic [N-1:0] counter;
-logic [N-1:0] ticks; //10 or 100 80kHz - 400kHz
+logic [M-1:0] counter;
+logic [M-1:0] ticks; //10 or 100 80kHz - 400kHz
 
 //always_comb rst = buttons[0]; // Use button 0 as a reset signal.
 //logic ena; always_comb ena = buttons[1]; // Use button 1 as a enable signal.
