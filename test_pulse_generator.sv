@@ -20,7 +20,7 @@ pulse_generator #(.N($clog2(CLK_TICKS))) UUT (
 always #(CLK_PERIOD_NS/2) clk = ~clk;
 
 initial begin
-  $dumpfile("pulse_generator.vcd");
+  $dumpfile("pulse_generator.fst");
   $dumpvars(0, UUT);
 
   rst = 1;

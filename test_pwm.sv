@@ -19,7 +19,7 @@ pulse_generator #(.N($clog2(CLK_TICKS))) PULSE_GEN (
 
 logic [PWM_WIDTH-1:0] duty;
 pwm #(.N(PWM_WIDTH)) PWM(
-  .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(duty), .out(pwm_out)
+  .clk(clk), .rst(rst), .ena(ena), .step(1'b1), .duty(duty), .out(pwm_out)
 );
 
 logic [PWM_WIDTH-1:0] duty2;

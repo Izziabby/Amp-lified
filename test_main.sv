@@ -11,14 +11,14 @@ parameter M_VAL = $clog2(CLK_TICKS);
 
 logic clk, rst, ena;
 logic [$clog2(CLK_TICKS)-1:0] ticks;
-wire pwm_step, pwm_out, duty;
+wire pwm_step, pwm_out_A, pwm_out_B, duty;
 
-logic [1:0] leds;
-wire [1:0] buttons;
+wire [1:0] leds;
+logic [1:0] buttons;
 
-main #(.N(PWM_WIDTH), .M(M_VAL)) UUT(
-    .clk(clk), .rst(rst), .ena(ena),
-    .pwm_out(pwm_out), .buttons(buttons), .leds(leds)
+main #(.N(PWM_WIDTH), .M($clog2(CLK_TICKS))) UUT(
+    .clk(clk), .ena(ena),
+    .pwm_out_A(pwm_out_A), .pwm_out_B(pwm_out_B), .buttons(buttons), .leds(leds)
 );
 
 always #(CLK_PERIOD_NS/2) clk = ~clk;
@@ -27,14 +27,14 @@ initial begin
 $dumpfile("new.fst");
 $dumpvars(0, UUT);
 
-rst = 1;
 ena = 1;
 clk = 0;
+buttons = 2'b11; //using button[0] as reset.
 ticks = CLK_TICKS;
 $display("Enable the PWM %d ticks...", ticks);
 
-repeat (1) @(negedge clk);
-rst = 0;
+repeat (2) @(negedge clk);
+buttons = 2'b00;
 
 repeat (10*CLK_TICKS) @(posedge clk);
 

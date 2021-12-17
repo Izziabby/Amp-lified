@@ -1,0 +1,9 @@
+# ignore all logs
+*.log
+
+# ignore all jous
+*.jou
+
+# ignore all html
+*.html
+

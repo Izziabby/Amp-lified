@@ -2,34 +2,32 @@
   A pulse width modulation module 
 */
 
-module main(clk, rst, ena, pwm_out, leds, buttons);
+module main(clk, ena, pwm_out_A, pwm_out_B, leds, buttons);
 
 parameter N = 8;
-parameter M = $clog2(CLK_TICKS);
+parameter M = 10;
 
 parameter CLK_HZ = 12_000_000;
 parameter CLK_PERIOD_NS = (1_000_000_000/CLK_HZ); // Approximation.
 parameter PERIOD_US = 10; //us   // Keep it small in the testbench 
 parameter CLK_TICKS = CLK_HZ*PERIOD_US/1_000_000;
 
-input wire clk, rst, ena; 
-output logic pwm_out;
+input wire clk, ena; 
+output logic pwm_out_A, pwm_out_B; 
 output logic [1:0] leds;
-input wire [1:0] buttons;
+input wire [1:0] buttons; 
+
+logic rst; always_comb rst = buttons[0]; // Use button 0 as a reset signal.
+
 
 logic [N-1:0] duty;
-logic [M-1:0] counter;
-logic [M-1:0] ticks; //10 or 100 80kHz - 400kHz
+logic [$clog2(CLK_TICKS)-1:0] ticks; //10 or 100 80kHz - 400kHz
+always_comb ticks = CLK_TICKS;
+wire pwm_step;
 
-//always_comb rst = buttons[0]; // Use button 0 as a reset signal.
-//logic ena; always_comb ena = buttons[1]; // Use button 1 as a enable signal.
-
-// Some example logic to make sure that you've flashed the FPGA. One of the
-// worst problems to debug is when you aren't sure that the FPGA is updating
-// its HDL. If you are worried about that, make a simple change to this block
-// to make sure that the FPGA is updating!
 always_comb begin : output_leds
-    leds[0] = pwm_out;
+    leds[0] = ena & pwm_out_A;
+    leds[1] = ena & pwm_out_B;
 end
 
 pulse_generator #(.N($clog2(CLK_TICKS))) PULSE_GEN (
@@ -41,8 +39,12 @@ triangle_generator #(.N(N)) TRI(
   .clk(clk), .rst(rst), .ena(ena), .out(duty)
 );
 
-pwm #(.N(N)) PWM(
-  .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(duty), .out(pwm_out)
+pwm #(.N(N)) PWM_A(
+  .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(duty), .out(pwm_out_A)
+);
+
+pwm #(.N(N)) PWM_B(
+  .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(~duty), .out(pwm_out_B)
 );
 
 endmodule
