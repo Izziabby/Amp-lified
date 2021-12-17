@@ -12,3 +12,10 @@
 
 # ignore all checkpoint
 *.checkpoint
+
+# ignore all bin
+*.bin
+
+# ignore all bit
+*.bit
+
