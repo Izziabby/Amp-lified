@@ -7,3 +7,5 @@
 # ignore all html
 *.html
 
+# ignore all xml
+*.xml
