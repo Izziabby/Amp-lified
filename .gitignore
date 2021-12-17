@@ -9,3 +9,6 @@
 
 # ignore all xml
 *.xml
+
+# ignore all checkpoint
+*.checkpoint
