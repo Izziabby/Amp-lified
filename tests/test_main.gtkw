@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Fri Dec 17 22:24:04 2021
+[*]
+[dumpfile] "/home/iabilheira/Documents/Amp-lified/tests/main.fst"
+[dumpfile_mtime] "Fri Dec 17 22:23:11 2021"
+[dumpfile_size] 4442
+[savefile] "/home/iabilheira/Documents/Amp-lified/tests/test_main.gtkw"
+[timestart] 0
+[size] 1366 704
+[pos] -101 -101
+*-25.998652 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] test_main.
+[treeopen] test_main.UUT.
+[sst_width] 233
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 180
+@28
+test_main.UUT.clk
+test_main.UUT.ena
+test_main.UUT.rst
+test_main.UUT.pwm_out_A
+test_main.UUT.pwm_out_B
+@800028
+test_main.UUT.buttons[1:0]
+@28
+(0)test_main.UUT.buttons[1:0]
+(1)test_main.UUT.buttons[1:0]
+@1001200
+-group_end
+@800029
+test_main.UUT.leds[1:0]
+@29
+(0)test_main.UUT.leds[1:0]
+(1)test_main.UUT.leds[1:0]
+@1001201
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

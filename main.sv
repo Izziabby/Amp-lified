@@ -9,7 +9,7 @@ parameter M = 10;
 
 parameter CLK_HZ = 12_000_000;
 parameter CLK_PERIOD_NS = (1_000_000_000/CLK_HZ); // Approximation.
-parameter PERIOD_US = 10; //us   // Keep it small in the testbench 
+parameter PERIOD_US = 100_000; //us   // Keep it small in the testbench  1_000_000us = 1s
 parameter CLK_TICKS = CLK_HZ*PERIOD_US/1_000_000;
 
 input wire clk, ena; 
@@ -24,6 +24,8 @@ logic [N-1:0] duty;
 logic [$clog2(CLK_TICKS)-1:0] ticks; //10 or 100 80kHz - 400kHz
 always_comb ticks = CLK_TICKS;
 wire pwm_step;
+
+always_comb pwm_out_B = ~pwm_out_A;
 
 always_comb begin : output_leds
     leds[0] = ena & pwm_out_A;
@@ -43,8 +45,8 @@ pwm #(.N(N)) PWM_A(
   .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(duty), .out(pwm_out_A)
 );
 
-pwm #(.N(N)) PWM_B(
-  .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(~duty), .out(pwm_out_B)
-);
+// pwm #(.N(N)) PWM_B(
+//   .clk(clk), .rst(rst), .ena(ena), .step(pwm_step), .duty(~duty), .out(pwm_out_B)
+// );
 
 endmodule

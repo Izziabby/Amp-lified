@@ -14,20 +14,20 @@ MAIN_SRCS=main.sv pulse_generator.sv pwm.sv triangle_generator.sv
 # Look up .PHONY rules for Makefiles
 .PHONY: clean submission remove_solutions
 
-test_pulse_generator: test_pulse_generator.sv pulse_generator.sv
+test_pulse_generator: tests/test_pulse_generator.sv pulse_generator.sv
 	${IVERILOG} $^ -o test_pulse_generator.bin && ${VVP} test_pulse_generator.bin ${VVP_POST}
 
-test_pwm: test_pwm.sv pulse_generator.sv pwm.sv
+test_pwm: tests/test_pwm.sv pulse_generator.sv pwm.sv
 	@echo "This might take a while, we're testing a lot of clock cycles!"
 	${IVERILOG} $^ -o test_pwm.bin && ${VVP} test_pwm.bin ${VVP_POST}
 
-test_tri: test_triangle_generator.sv triangle_generator.sv 
+test_tri: tests/test_triangle_generator.sv triangle_generator.sv 
 	@echo "This might take a while, we're testing a lot of clock cycles!"
 	${IVERILOG} $^ -o test_tri.bin && ${VVP} test_tri.bin ${VVP_POST}
 
-test_main: test_main.sv ${MAIN_SRCS} pulse_generator.sv pwm.sv 
+test_main: tests/test_main.sv ${MAIN_SRCS} pulse_generator.sv pwm.sv 
 	@echo "This might take a while, we're testing a lot of clock cycles!"
-	${IVERILOG} test_main.sv ${MAIN_SRCS} -o test_main.bin && ${VVP} test_main.bin ${VVP_POST}
+	${IVERILOG} tests/test_main.sv ${MAIN_SRCS} -o test_main.bin && ${VVP} test_main.bin ${VVP_POST}
 
 main.bit: main.sv $(MAIN_SRCS)
 	@echo "########################################"

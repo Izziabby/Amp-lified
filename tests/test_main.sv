@@ -4,7 +4,7 @@ module test_main;
 
 parameter CLK_HZ = 12_000_000;
 parameter CLK_PERIOD_NS = (1_000_000_000/CLK_HZ); // Approximation.
-parameter PERIOD_US = 10; //us   // Keep it small in the testbench 
+parameter PERIOD_US = 100; //us   // Keep it small in the testbench 
 parameter CLK_TICKS = CLK_HZ*PERIOD_US/1_000_000;
 parameter PWM_WIDTH = 4;
 parameter M_VAL = $clog2(CLK_TICKS);
@@ -24,7 +24,7 @@ main #(.N(PWM_WIDTH), .M($clog2(CLK_TICKS))) UUT(
 always #(CLK_PERIOD_NS/2) clk = ~clk;
 
 initial begin
-$dumpfile("new.fst");
+$dumpfile("main.fst");
 $dumpvars(0, UUT);
 
 ena = 1;

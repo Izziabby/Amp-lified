@@ -19,19 +19,19 @@ set_property -dict { PACKAGE_PIN B18   IOSTANDARD LVCMOS33 } [get_ports { button
 
 
 # ILI9341 Display Controller + FT6206 Capacitive Controller (i2c) + SD Card
-set_property -dict { PACKAGE_PIN W2    IOSTANDARD LVCMOS33 } [get_ports { pwm_out_A }]; #IO_L5N_T0_34 Sch=pio[32]
+set_property -dict { PACKAGE_PIN W2    IOSTANDARD LVCMOS33 } [get_ports { ena }]; #IO_L5N_T0_34 Sch=pio[32]
 set_property -dict { PACKAGE_PIN V2    IOSTANDARD LVCMOS33 } [get_ports { pwm_out_B }]; #IO_L5P_T0_34 Sch=pio[33]
-set_property -dict { PACKAGE_PIN W3    IOSTANDARD LVCMOS33 } [get_ports { ena }]; #IO_L6N_T0_VREF_34 Sch=pio[34]
-set_property -dict { PACKAGE_PIN V3    IOSTANDARD LVCMOS33 } [get_ports { rst }]; #IO_L6P_T0_34 Sch=pio[35]
-set_property -dict { PACKAGE_PIN W5    IOSTANDARD LVCMOS33 } [get_ports { step }]; #IO_L12P_T1_MRCC_34 Sch=pio[36]
-set_property -dict { PACKAGE_PIN V4    IOSTANDARD LVCMOS33 } [get_ports { duty[0] }]; #IO_L11N_T1_SRCC_34 Sch=pio[37]
-set_property -dict { PACKAGE_PIN U4    IOSTANDARD LVCMOS33 } [get_ports { duty[1] }]; #IO_L11P_T1_SRCC_34 Sch=pio[38]
-set_property -dict { PACKAGE_PIN V5    IOSTANDARD LVCMOS33 } [get_ports { duty[2] }]; #IO_L16N_T2_34 Sch=pio[39]
-set_property -dict { PACKAGE_PIN W4    IOSTANDARD LVCMOS33 } [get_ports { duty[3] }]; #IO_L12N_T1_MRCC_34 Sch=pio[40]
-set_property -dict { PACKAGE_PIN U5    IOSTANDARD LVCMOS33 } [get_ports { duty[4] }]; #IO_L16P_T2_34 Sch=pio[41] #skipping it, it's the gnd pin
-set_property -dict { PACKAGE_PIN U2    IOSTANDARD LVCMOS33 } [get_ports { duty[5] }]; #IO_L9N_T1_DQS_34 Sch=pio[42]
-set_property -dict { PACKAGE_PIN W6    IOSTANDARD LVCMOS33 } [get_ports { duty[6] }]; #IO_L13N_T2_MRCC_34 Sch=pio[43]
-set_property -dict { PACKAGE_PIN U3    IOSTANDARD LVCMOS33 } [get_ports { duty[7] }]; #IO_L9P_T1_DQS_34 Sch=pio[44]
+set_property -dict { PACKAGE_PIN W3    IOSTANDARD LVCMOS33 } [get_ports { pwm_out_A  }]; #IO_L6N_T0_VREF_34 Sch=pio[34]
+#set_property -dict { PACKAGE_PIN V3    IOSTANDARD LVCMOS33 } [get_ports { rst }]; #IO_L6P_T0_34 Sch=pio[35]
+#set_property -dict { PACKAGE_PIN W5    IOSTANDARD LVCMOS33 } [get_ports { step }]; #IO_L12P_T1_MRCC_34 Sch=pio[36]
+#set_property -dict { PACKAGE_PIN V4    IOSTANDARD LVCMOS33 } [get_ports { duty[0] }]; #IO_L11N_T1_SRCC_34 Sch=pio[37]
+#set_property -dict { PACKAGE_PIN U4    IOSTANDARD LVCMOS33 } [get_ports { duty[1] }]; #IO_L11P_T1_SRCC_34 Sch=pio[38]
+#set_property -dict { PACKAGE_PIN V5    IOSTANDARD LVCMOS33 } [get_ports { duty[2] }]; #IO_L16N_T2_34 Sch=pio[39]
+#set_property -dict { PACKAGE_PIN W4    IOSTANDARD LVCMOS33 } [get_ports { duty[3] }]; #IO_L12N_T1_MRCC_34 Sch=pio[40]
+#set_property -dict { PACKAGE_PIN U5    IOSTANDARD LVCMOS33 } [get_ports { duty[4] }]; #IO_L16P_T2_34 Sch=pio[41] #skipping it, it's the gnd pin
+#set_property -dict { PACKAGE_PIN U2    IOSTANDARD LVCMOS33 } [get_ports { duty[5] }]; #IO_L9N_T1_DQS_34 Sch=pio[42]
+#set_property -dict { PACKAGE_PIN W6    IOSTANDARD LVCMOS33 } [get_ports { duty[6] }]; #IO_L13N_T2_MRCC_34 Sch=pio[43]
+#set_property -dict { PACKAGE_PIN U3    IOSTANDARD LVCMOS33 } [get_ports { duty[7] }]; #IO_L9P_T1_DQS_34 Sch=pio[44]
 #set_property -dict { PACKAGE_PIN U7    IOSTANDARD LVCMOS33 } [get_ports { display_csb }]; #IO_L19P_T3_34 Sch=pio[45]
 #set_property -dict { PACKAGE_PIN W7    IOSTANDARD LVCMOS33 } [get_ports { spi_mosi }]; #IO_L13P_T2_MRCC_34 Sch=pio[46]
 #set_property -dict { PACKAGE_PIN U8    IOSTANDARD LVCMOS33 } [get_ports { spi_miso }]; #IO_L14P_T2_SRCC_34 Sch=pio[47]
