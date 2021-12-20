@@ -58,11 +58,6 @@ We used 2 NMOS, 2 PMOS, 2 inductors, 2 capacitors, and one FPGA to to build this
 
 After constructing the circuit, we had to find a way to connect it to the computers, and actually input our waveforms to get amplfied waveforms as an output. To do this, we used an FPGA, as explained in the next section.
 
-
-We used 2 NMOS, 2 PMOS, 2 inductors, 2 capacitors, and one FPGA to to build this circuit. The general circuit consists of a pulse-width modulator, two output MOSFETs, and an external lowpass filter (LF and CF) to recover the amplified audio signal. As shown in the figure, both MOSFETs operate as current-steering switches by alternately connecting the output node to VDD and ground, which makes the output of a Class D amplifier a high-frequency square wave, which is then pulse-width modulated by the input audio signal.
-
-After constructing the circuit, we had to find a way to connect it to the computers, and actually input our waveforms to get amplfied waveforms as an output. To do this, we used an FPGA, as explained in the next section.
-
 ![main](https://github.com/Izziabby/Amp-lified/blob/main/images/main_block_diagram.jpeg)
 
 ### Pulse Generator
