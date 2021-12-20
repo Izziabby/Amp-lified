@@ -42,7 +42,7 @@ As can be seen in the diagram, the audio input is at the non-inverting terminal,
 
 We based our circuit for this project off of this schematic:
 
-[modelsch](https://github.com/Izziabby/Amp-lified/blob/main/images/model_schematic.png) [3]
+[model_schematic](https://github.com/Izziabby/Amp-lified/blob/main/images/model_schematic.png) [3]
 
 # Our Schematic
 
