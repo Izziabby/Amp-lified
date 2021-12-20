@@ -42,15 +42,15 @@ As can be seen in the diagram, the audio input is at the non-inverting terminal,
 
 We based our circuit for this project off of this schematic:
 
-[model_schematic](https://github.com/Izziabby/Amp-lified/blob/main/images/model_schematic.png) [3]
+![model_schematic](https://github.com/Izziabby/Amp-lified/blob/main/images/model_schematic.png) [3]
 
 # Our Schematic
 
-[oursch](https://github.com/Izziabby/Amp-lified/blob/main/images/our_schematic.png)
+![oursch](https://github.com/Izziabby/Amp-lified/blob/main/images/our_schematic.png)
 
 # Our Circuit
 
-[ourcir](https://github.com/Izziabby/Amp-lified/blob/main/images/our_circuit.jpeg)
+![ourcir](https://github.com/Izziabby/Amp-lified/blob/main/images/our_circuit.jpeg)
 
 
 We used 2 NMOS, 2 PMOS, 2 inductors, 2 capacitors, and one FPGA to to build this circuit. The general circuit consists of a pulse-width modulator, two output MOSFETs, and an external lowpass filter (LF and CF) to recover the amplified audio signal. As shown in the figure, both MOSFETs operate as current-steering switches by alternately connecting the output node to VDD and ground, which makes the output of a Class D amplifier a high-frequency square wave, which is then pulse-width modulated by the input audio signal.
@@ -62,7 +62,7 @@ We used 2 NMOS, 2 PMOS, 2 inductors, 2 capacitors, and one FPGA to to build this
 
 After constructing the circuit, we had to find a way to connect it to the computers, and actually input our waveforms to get amplfied waveforms as an output. To do this, we used an FPGA, as explained in the next section.
 
-[main](https://github.com/Izziabby/Amp-lified/blob/main/images/main_block_diagram.jpeg)
+![main](https://github.com/Izziabby/Amp-lified/blob/main/images/main_block_diagram.jpeg)
 
 ###Pulse Generator
 
@@ -70,7 +70,7 @@ Inputs: clk, rst, ena
 
 Output: step
 
-[pulse](https://github.com/Izziabby/Amp-lified/blob/main/images/pulse_gen_block_diagram.png)
+![pulse](https://github.com/Izziabby/Amp-lified/blob/main/images/pulse_gen_block_diagram.png)
 
 ###Triangle Generator
 Inputs: clk, rst, ena
@@ -78,14 +78,14 @@ Inputs: clk, rst, ena
 Output: duty
 
 
-[tri](https://github.com/Izziabby/Amp-lified/blob/main/images/triangle_gen_block_diagram.png)
+![tri](https://github.com/Izziabby/Amp-lified/blob/main/images/triangle_gen_block_diagram.png)
 
 ###PWM Generator
 Inputs: clk, rst, ena, step, duty
 
 Output: A
 
-[pwm](https://github.com/Izziabby/Amp-lified/blob/main/images/pwm_block_diagram.jpeg)
+![pwm](https://github.com/Izziabby/Amp-lified/blob/main/images/pwm_block_diagram.jpeg)
 
 The output, A, pwm signal is connected to the 'A' side of the circuit as listed in the schematic. In addition, we have to NOT the A signal in order to get our 'B' side signal. This is connected to the 'B' side of the circuit as listed in the schematic. 
 
@@ -101,17 +101,17 @@ An Analog Discovery 2 ocsilliscope was used to measure all signals.
 
 First, we wanted to test if the the pwm signals were being output by the FPGA. To test this we measured the signal at the corresponding pin referenced to ground. We did this for both the 'A' and 'B' side. As shown below, the FPGA is outputing the correct signals.
 
-[ab](https://github.com/Izziabby/Amp-lified/blob/main/images/pwm_output_results.jpeg)
+![ab](https://github.com/Izziabby/Amp-lified/blob/main/images/pwm_output_results.jpeg)
 
 Next, we want to make sure the transistors are working so we measured the between both sides drains. Below, we see an amplified PWM signal so we be assured the transistors are functioning properly.
 
 
-[fet](https://github.com/Izziabby/Amp-lified/blob/main/images/mosfet_output_results.jpeg)
+![fet](https://github.com/Izziabby/Amp-lified/blob/main/images/mosfet_output_results.jpeg)
 
 When trying to measure the result of actual speaker output, we ran into some issues. For some reason, the ocilliscope wasn't picking up any data after the LC filters. Theoretically, we should be able to see an amplified sine wave here that would be output through the speaker. Below is a simplified block diagram:
 
 
-[hl](https://github.com/Izziabby/Amp-lified/blob/main/images/highlevel_block_diagram.jpeg) [22]
+![hl](https://github.com/Izziabby/Amp-lified/blob/main/images/highlevel_block_diagram.jpeg) [22]
 
 # BOM
 
