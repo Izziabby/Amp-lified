@@ -64,7 +64,7 @@ After constructing the circuit, we had to find a way to connect it to the comput
 
 ![main](https://github.com/Izziabby/Amp-lified/blob/main/images/main_block_diagram.jpeg)
 
-###Pulse Generator
+### Pulse Generator
 
 Inputs: clk, rst, ena
 
@@ -72,7 +72,7 @@ Output: step
 
 ![pulse](https://github.com/Izziabby/Amp-lified/blob/main/images/pulse_gen_block_diagram.png)
 
-###Triangle Generator
+### Triangle Generator
 Inputs: clk, rst, ena
 
 Output: duty
@@ -80,7 +80,7 @@ Output: duty
 
 ![tri](https://github.com/Izziabby/Amp-lified/blob/main/images/triangle_gen_block_diagram.png)
 
-###PWM Generator
+### PWM Generator
 Inputs: clk, rst, ena, step, duty
 
 Output: A
@@ -95,7 +95,7 @@ Since the A and B side signals are opposites of eachother this means that only 2
 
 Once all of the verilog code worked in simulation, it was time to flash it to the FPGA. The PWM output A and B are attached to pins 33 and 34 respectively. These A and B signals were sent through the circuit as indicated by the schematic.
 
-#Circuit Testing
+# Circuit Testing
 
 An Analog Discovery 2 ocsilliscope was used to measure all signals. 
 
@@ -127,39 +127,39 @@ General BOM:
 
 Class D Audio Amplifiers: 
 1.   https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3977.html
-2. https://www.analog.com/en/analog-dialogue/articles/class-d-audio-amplifiers.html
-3. https://handsontec.com/index.php/class-d-audio-amplifier-basic/ 
-4. https://circuitdigest.com/electronic-circuits/how-to-build-a-class-d-audio-amplifier-using-mosfets
+2.  https://www.analog.com/en/analog-dialogue/articles/class-d-audio-amplifiers.html
+3.  https://handsontec.com/index.php/class-d-audio-amplifier-basic/ 
+4.  https://circuitdigest.com/electronic-circuits/how-to-build-a-class-d-audio-amplifier-using-mosfets
 
 High side and low side drivers:
-5. https://electronics.stackexchange.com/questions/188745/high-side-driver-and-low-side-driver 
+5.   https://electronics.stackexchange.com/questions/188745/high-side-driver-and-low-side-driver 
 
 Videos:
-6. https://www.youtube.com/watch?v=O1UagNkcxi4 
-7. https://www.youtube.com/watch?v=7M2cWYeBmkc 
-8. https://www.youtube.com/watch?v=L5VyYHkcbvU 
-9. https://www.youtube.com/watch?v=YaygMLNVLOI&ab_channel=HardwareAcademy
+6.   https://www.youtube.com/watch?v=O1UagNkcxi4 
+7.  https://www.youtube.com/watch?v=7M2cWYeBmkc 
+8.  https://www.youtube.com/watch?v=L5VyYHkcbvU 
+9.  https://www.youtube.com/watch?v=YaygMLNVLOI&ab_channel=HardwareAcademy
 
 Op-Amps/PWM:
-10. https://www.electronicdesign.com/power-management/article/21800930/pulsewidth-modulator-features-versatile-operating-parameters 
-11. https://www.quora.com/Can-anyone-explain-the-pulse-width-modulation-circuit-using-an-op-amp 
-12. https://e2e.ti.com/blogs_/b/industrial_strength/posts/so-which-pwm-technique-is-best-part-4
+10.   https://www.electronicdesign.com/power-management/article/21800930/pulsewidth-modulator-features-versatile-operating-parameters 
+11.   https://www.quora.com/Can-anyone-explain-the-pulse-width-modulation-circuit-using-an-op-amp 
+12.   https://e2e.ti.com/blogs_/b/industrial_strength/posts/so-which-pwm-technique-is-best-part-4
 
 H-bridge:
-13. https://www.modularcircuits.com/blog/articles/h-bridge-secrets/h-bridges-the-basics/ 
+13.   https://www.modularcircuits.com/blog/articles/h-bridge-secrets/h-bridges-the-basics/ 
 
 Synthesizer in Verilog:
-14. https://courses.csail.mit.edu/6.111/f2004/projects/ac_report.pdf 
-15. http://zipcpu.com/dsp/2017/07/11/simplest-sinewave-generator.html 
-16. https://zipcpu.com/dsp/2017/08/26/quarterwave.html 
-17. https://electronics.stackexchange.com/questions/436069/variable-frequency-for-sine-wave-in-verilog 
-18. https://miscircuitos.com/sinus-wave-generation-with-verilog-using-vivado-for-a-fpga/ 
-19. https://www.chipverify.com/verilog/verilog-clock-generator
-20. https://www.electronicsforu.com/electronics-projects/pwm-generator-microcontroller-verilog
+14.  https://courses.csail.mit.edu/6.111/f2004/projects/ac_report.pdf 
+15.   http://zipcpu.com/dsp/2017/07/11/simplest-sinewave-generator.html 
+16.   https://zipcpu.com/dsp/2017/08/26/quarterwave.html 
+17.   https://electronics.stackexchange.com/questions/436069/variable-frequency-for-sine-wave-in-verilog 
+18.   https://miscircuitos.com/sinus-wave-generation-with-verilog-using-vivado-for-a-fpga/ 
+19.   https://www.chipverify.com/verilog/verilog-clock-generator
+20.   https://www.electronicsforu.com/electronics-projects/pwm-generator-microcontroller-verilog
 
 Images:
-21. https://handsontec.com/index.php/class-d-audio-amplifier-basic/ 
-22. https://www.allaboutcircuits.com/projects/how-to-build-a-class-d-power-amplifier/ 
+21.   https://handsontec.com/index.php/class-d-audio-amplifier-basic/ 
+22.   https://www.allaboutcircuits.com/projects/how-to-build-a-class-d-power-amplifier/ 
 
 
 
