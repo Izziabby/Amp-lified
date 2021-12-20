@@ -27,7 +27,7 @@ A metal–oxide–semiconductor field-effect transistor, more commonly known as 
 
 The silicon dioxide forms the gate of the mosfet. It is used to provide isolation by prevent the direct flow of charges on gate to the conducting channel.
 
-![mosfet](https://github.com/Izziabby/Amp-lified/blob/main/images/mosfet_diagram.png) 
+![mosfet](https://github.com/Izziabby/Amp-lified/blob/main/images/mosfet_diagram.png) [23]
 
 A MOSFET is by far the most common transistor in digital circuits, as hundreds of thousands or millions of them may be included in a memory chip or microprocessor. Since they can be made with either p-type or n-type semiconductors, complementary pairs of MOS transistors can be used to make switching circuits with very low power consumption, in the form of CMOS logic.
 
