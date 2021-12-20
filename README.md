@@ -1,3 +1,4 @@
+![methodology](https://user-images.githubusercontent.com/54726641/146710472-630d7d53-894c-4770-994d-1d1ed649ed04.jpeg)
 # Amp-lified
 
 Isabella Abilheira, Sree Chalimadugu, Simrun Mutha, and Prisha Sadhwani
@@ -19,6 +20,4 @@ The objective of this project is to research and build a Class D full bridge amp
 Using Verilog, we will generate a waveform and then compare it to a triangle wave to create our PWM signal. This signal will be sent directly to the circuit. Here is block diagram that shows the overall methodology:
 
 
-![](./images/methodolgy.jpeg)
-
-
+![methodology](https://github.com/Izziabby/Amp-lified/blob/main/images/methodology.jpeg)
