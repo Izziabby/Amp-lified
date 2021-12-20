@@ -26,7 +26,8 @@ Using Verilog, we will generate a waveform and then compare it to a triangle wav
 A metal–oxide–semiconductor field-effect transistor, more commonly known as a MOSFET, is a field-effect transistor where the voltage of the device determines the conductivity of the device. MOSFETs are used for switching or amplifying signals. 
 
 The silicon dioxide forms the gate of the mosfet. It is used to provide isolation by prevent the direct flow of charges on gate to the conducting channel.
-*insert picture here*
+
+![mosfet](https://github.com/Izziabby/Amp-lified/blob/main/images/mosfet_diagram.png) 
 
 A MOSFET is by far the most common transistor in digital circuits, as hundreds of thousands or millions of them may be included in a memory chip or microprocessor. Since they can be made with either p-type or n-type semiconductors, complementary pairs of MOS transistors can be used to make switching circuits with very low power consumption, in the form of CMOS logic.
 
@@ -126,29 +127,35 @@ General BOM:
 # Resources
 
 Class D Audio Amplifiers: 
+
 1.   https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3977.html
 2.  https://www.analog.com/en/analog-dialogue/articles/class-d-audio-amplifiers.html
 3.  https://handsontec.com/index.php/class-d-audio-amplifier-basic/ 
 4.  https://circuitdigest.com/electronic-circuits/how-to-build-a-class-d-audio-amplifier-using-mosfets
 
 High side and low side drivers:
+
 5.   https://electronics.stackexchange.com/questions/188745/high-side-driver-and-low-side-driver 
 
 Videos:
+
 6.   https://www.youtube.com/watch?v=O1UagNkcxi4 
 7.  https://www.youtube.com/watch?v=7M2cWYeBmkc 
 8.  https://www.youtube.com/watch?v=L5VyYHkcbvU 
 9.  https://www.youtube.com/watch?v=YaygMLNVLOI&ab_channel=HardwareAcademy
 
 Op-Amps/PWM:
+
 10.   https://www.electronicdesign.com/power-management/article/21800930/pulsewidth-modulator-features-versatile-operating-parameters 
 11.   https://www.quora.com/Can-anyone-explain-the-pulse-width-modulation-circuit-using-an-op-amp 
 12.   https://e2e.ti.com/blogs_/b/industrial_strength/posts/so-which-pwm-technique-is-best-part-4
 
 H-bridge:
+
 13.   https://www.modularcircuits.com/blog/articles/h-bridge-secrets/h-bridges-the-basics/ 
 
 Synthesizer in Verilog:
+
 14.  https://courses.csail.mit.edu/6.111/f2004/projects/ac_report.pdf 
 15.   http://zipcpu.com/dsp/2017/07/11/simplest-sinewave-generator.html 
 16.   https://zipcpu.com/dsp/2017/08/26/quarterwave.html 
@@ -158,8 +165,10 @@ Synthesizer in Verilog:
 20.   https://www.electronicsforu.com/electronics-projects/pwm-generator-microcontroller-verilog
 
 Images:
+
 21.   https://handsontec.com/index.php/class-d-audio-amplifier-basic/ 
 22.   https://www.allaboutcircuits.com/projects/how-to-build-a-class-d-power-amplifier/ 
+23.   https://www.researchgate.net/figure/a-Schematic-diagram-of-a-MOSFET-b-BSS138N-MOSFET-device-6_fig1_231146722
 
 
 
