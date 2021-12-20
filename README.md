@@ -84,11 +84,11 @@ Output: duty
 ### PWM Generator
 Inputs: clk, rst, ena, step, duty
 
-Output: A
+Output: out = A
 
-![pwm](https://github.com/Izziabby/Amp-lified/blob/main/images/pwm_block_diagram.jpeg)
+![pwm](https://github.com/Izziabby/Amp-lified/blob/main/images/pwm_block_diagram.png)
 
-The output, A, pwm signal is connected to the 'A' side of the circuit as listed in the schematic. In addition, we have to NOT the A signal in order to get our 'B' side signal. This is connected to the 'B' side of the circuit as listed in the schematic. 
+The output above, out, pwm signal is connected to the 'A' side of the circuit as listed in the schematic. In addition, we have to NOT the A signal in order to get our 'B' side signal. This is connected to the 'B' side of the circuit as listed in the schematic. 
 
 Since the A and B side signals are opposites of eachother this means that only 2 transistors are on at a time switching between A side and B side. This creates a differential PWM signal across the load. [1]
 
